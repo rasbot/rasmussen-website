@@ -7,11 +7,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const featuredProjects = projects.slice(0, 3);
 
 const capabilities = [
-  "Custom Design",
-  "Prototyping",
-  "3D Printing",
-  "Painting & Finishing",
-  "Assembly",
+  {
+    title: "Custom Design",
+    description: "Original concepts, project planning, and thoughtful customization.",
+  },
+  {
+    title: "Prototyping",
+    description: "Iterative test prints to refine fit, appearance, and function.",
+  },
+  {
+    title: "3D Printing",
+    description: "High-quality production using reliable materials and tuned print settings.",
+  },
+  {
+    title: "Painting & Finishing",
+    description: "Surface preparation, painting, assembly, and finishing touches.",
+  },
+  {
+    title: "Assembly",
+    description: "Careful final assembly and inspection before delivery.",
+  },
 ];
 ---
 
@@ -48,7 +63,7 @@ const capabilities = [
         <h2>Custom work, finished by hand.</h2>
       </div>
       <p>
-        Awards, props, and display pieces built around the client, the event, and the final
+        Awards, props, and display pieces designed around the client, the event, and the final
         presentation.
       </p>
     </div>
@@ -64,7 +79,14 @@ const capabilities = [
         <h2>More than sending a file to a printer.</h2>
       </div>
       <div class="capability-grid">
-        {capabilities.map((capability) => <article class="capability-card">{capability}</article>)}
+        {
+          capabilities.map((capability) => (
+            <article class="capability-card">
+              <h3>{capability.title}</h3>
+              <p>{capability.description}</p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -84,10 +106,10 @@ const capabilities = [
         <p class="eyebrow">Hi, I'm Nathan</p>
         <h2>I turn ideas into finished pieces.</h2>
         <p>
-          I design, prototype, 3D print, paint, and assemble custom awards, props,
-          and display pieces. Some projects need original CAD work, some need adaptation,
-          and others come down to careful printing, finishing, and assembly. My goal is to
-          create pieces that feel intentional, polished, and worth keeping.
+          I design, prototype, 3D print, paint, and assemble custom awards, props, and
+          display pieces. Some projects involve original CAD work, some start with adaptation,
+          and some depend on careful printing, finishing, and assembly. I care about making
+          pieces that feel intentional, polished, and worth keeping.
         </p>
       </div>
     </div>
