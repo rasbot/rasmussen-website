@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder image for pickleball awards</title>
+  <desc id="desc">Minimal placeholder artwork showing award forms and pickleball paddle shapes.</desc>
+  <rect width="1200" height="800" fill="#ede7dc"/>
+  <rect x="110" y="110" width="980" height="580" rx="28" fill="#f8f5ef"/>
+  <circle cx="370" cy="310" r="115" fill="#2e6f6d"/>
+  <rect x="326" y="392" width="88" height="190" rx="38" fill="#2e6f6d"/>
+  <circle cx="370" cy="310" r="10" fill="#f8f5ef"/>
+  <circle cx="420" cy="300" r="10" fill="#f8f5ef"/>
+  <circle cx="330" cy="350" r="10" fill="#f8f5ef"/>
+  <path d="M620 230h170l52 352H568z" fill="#c96f4a"/>
+  <path d="M646 270h118l34 230H612z" fill="#f8f5ef" opacity=".78"/>
+  <rect x="235" y="602" width="650" height="24" rx="12" fill="#2b2a27" opacity=".16"/>
+  <text x="600" y="652" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" fill="#2b2a27">Pickleball Awards</text>
+</svg>

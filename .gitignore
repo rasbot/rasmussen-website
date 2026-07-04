@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.astro-dev.log
+.astro-dev.err
+.static-server.log
+.static-server.err
+.env
+.env.*
+npm-debug.log*

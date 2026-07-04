@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pricingFactors = [
+  "Quantity",
+  "Design complexity",
+  "Print time",
+  "Materials",
+  "Painting",
+  "Finishing",
+  "Assembly",
+];
+---
+
+<BaseLayout
+  title="Pricing"
+  description="Pricing guidance for custom 3D printed awards, props, and display pieces."
+>
+  <section class="section">
+    <div class="container split">
+      <div class="stack">
+        <p class="eyebrow">Pricing</p>
+        <h1>Custom awards typically start around $300.</h1>
+        <p class="lead">
+          Every project is different, so pricing is estimated after the shape, scope, and
+          production details are understood.
+        </p>
+      </div>
+      <aside class="panel price-callout" aria-label="Starting price">
+        <p class="eyebrow">Typical starting point</p>
+        <p class="price">$300+</p>
+        <p>
+          Best for custom awards, small batches, display pieces, and objects that need
+          design time as well as production time.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container split">
+      <div class="stack">
+        <p class="eyebrow">What affects cost</p>
+        <h2>Pricing depends on the full build, not just the print.</h2>
+      </div>
+      <div class="panel">
+        <ul class="list">
+          {pricingFactors.map((factor) => <li>{factor}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

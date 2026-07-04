@@ -1,0 +1,68 @@
+---
+import { navLinks, site } from "../data/site";
+import "../styles/global.css";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title, description = site.description } = Astro.props;
+const pageTitle = title ? `${title} | ${site.name}` : site.name;
+const pathname = Astro.url.pathname;
+const normalizedPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="/" aria-label={`${site.name} home`}>
+            <strong>{site.name}</strong>
+            <span>3D printed awards and display pieces</span>
+          </a>
+          <nav aria-label="Primary navigation">
+            <ul class="nav-list">
+              {
+                navLinks.map((link) => {
+                  const linkPath = link.href.endsWith("/") ? link.href : `${link.href}/`;
+                  const current =
+                    link.href === "/"
+                      ? normalizedPath === "/"
+                      : normalizedPath.startsWith(linkPath);
+                  return (
+                    <li>
+                      <a href={link.href} aria-current={current ? "page" : undefined}>
+                        {link.label}
+                      </a>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p>&copy; {new Date().getFullYear()} {site.name}</p>
+          <p>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

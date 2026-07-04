@@ -1,0 +1,27 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Portfolio"
+  description="Portfolio examples for custom 3D printed awards, medals, props, and display pieces."
+>
+  <section class="section">
+    <div class="container stack">
+      <p class="eyebrow">Portfolio</p>
+      <h1>Custom 3D printed pieces for events, teams, and displays.</h1>
+      <p class="lead">
+        These placeholder projects show the type of work this site is built around. Each card
+        can be updated with real photos, process notes, and final project details.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container project-grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>

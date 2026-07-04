@@ -1,0 +1,45 @@
+---
+import { site } from "../data/site";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const contactItems = [
+  "Project description",
+  "Quantity",
+  "Deadline",
+  "Budget range",
+  "Reference images",
+];
+
+const subject = encodeURIComponent("Project inquiry for Nathan Rasmussen Design");
+const mailto = `mailto:${site.email}?subject=${subject}`;
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact Nathan Rasmussen Design for custom 3D printed awards, props, displays, and design work."
+>
+  <section class="section">
+    <div class="container split">
+      <div class="stack">
+        <p class="eyebrow">Contact</p>
+        <h1>Tell me what you want to make.</h1>
+        <p class="lead">
+          Send the basics and any useful references. A rough idea is enough to start a
+          practical conversation about scope, timing, and price.
+        </p>
+        <div class="button-row">
+          <a class="button" href={mailto}>Email Nathan Rasmussen Design</a>
+        </div>
+      </div>
+      <aside class="panel stack">
+        <h2>Include these details</h2>
+        <ul class="contact-list">
+          {contactItems.map((item) => <li>{item}</li>)}
+        </ul>
+        <p>
+          Email: <a href={mailto}>{site.email}</a>
+        </p>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
