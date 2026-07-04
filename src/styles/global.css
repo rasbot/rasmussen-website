@@ -316,23 +316,6 @@ p {
   font-size: 0.96rem;
 }
 
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  list-style: none;
-  padding: 0;
-  margin: 2px 0 0;
-}
-
-.tag-list li {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--muted-strong);
-  font-size: 0.76rem;
-  padding: 4px 9px;
-}
-
 .split {
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(320px, 1fr);

@@ -4,7 +4,6 @@ export type Project = {
   summary: string;
   image: string;
   alt: string;
-  tags: string[];
 };
 
 export const projects: Project[] = [
@@ -15,7 +14,6 @@ export const projects: Project[] = [
       "Custom tournament awards designed, printed, finished, and assembled for a specific event.",
     image: "/images/portfolio/pickleball-tournament-awards.jpg",
     alt: "Pickleball tournament awards.",
-    tags: ["Awards", "Event work", "Finishing"],
   },
   {
     title: "Fitness challenge medals",
@@ -24,7 +22,6 @@ export const projects: Project[] = [
       "Small-batch medals and achievement pieces for gym challenges and member milestones.",
     image: "/images/portfolio/fitness-challenge-medals.jpg",
     alt: "Fitness challenge medals.",
-    tags: ["Medals", "Fitness", "Small batches"],
   },
   {
     title: "Company robot awards",
@@ -33,7 +30,6 @@ export const projects: Project[] = [
       "Branded recognition pieces with custom modeling, print planning, finishing, and assembly.",
     image: "/images/portfolio/company-robot-awards.jpg",
     alt: "Company robot awards.",
-    tags: ["Brand objects", "Awards", "Display"],
   },
   {
     title: "Large Space Needle print",
@@ -42,7 +38,6 @@ export const projects: Project[] = [
       "A large-format printed display piece used as a scale and finishing reference for ambitious builds.",
     image: "/images/portfolio/large-space-needle-print.jpg",
     alt: "Large 3D printed Space Needle display piece.",
-    tags: ["Large print", "Display", "Assembly"],
   },
   {
     title: "Props and display pieces",
@@ -51,6 +46,13 @@ export const projects: Project[] = [
       "One-off props, display forms, and printed objects built for the intended setting.",
     image: "/images/portfolio/props-display-pieces.jpg",
     alt: "Props and display pieces.",
-    tags: ["Props", "Displays", "Design"],
+  },
+  {
+    title: "Functional pieces",
+    slug: "functional-pieces",
+    summary:
+      "Practical custom parts like drawer dividers, organizers, and problem-solving pieces designed for a specific space.",
+    image: "/images/portfolio/drawer-organizer.jpg",
+    alt: "Custom drawer organizer and dividers.",
   },
 ];
