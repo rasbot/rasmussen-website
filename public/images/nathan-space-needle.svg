@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder photo space for Nathan with a large Space Needle print</title>
+  <desc id="desc">Dark studio-style placeholder reserved for a personal photo with a 5.5-foot 3D printed Space Needle.</desc>
+  <rect width="1200" height="800" fill="#171817"/>
+  <rect x="76" y="76" width="1048" height="648" rx="18" fill="#20221f"/>
+  <rect x="88" y="562" width="1024" height="112" fill="#111211" opacity=".72"/>
+  <circle cx="368" cy="286" r="72" fill="#7c6d55"/>
+  <path d="M252 628c16-156 62-236 116-236s100 80 116 236z" fill="#343934"/>
+  <path d="M768 116 812 306h-88z" fill="#d8cfbd"/>
+  <path d="M652 326h232l-64 58H716z" fill="#b08a4a"/>
+  <path d="M706 386h124l-28 242h-68z" fill="#d8cfbd"/>
+  <path d="M736 628 620 680h300l-118-52z" fill="#62684c"/>
+  <text x="600" y="724" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#d8cfbd">Photo Placeholder: Nathan + 5.5-foot Space Needle</text>
+</svg>

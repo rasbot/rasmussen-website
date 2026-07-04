@@ -1,52 +1,138 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pricingFactors = [
-  "Quantity",
-  "Design complexity",
-  "Print time",
-  "Materials",
-  "Painting",
-  "Finishing",
-  "Assembly",
+const pricingComponents = [
+  {
+    title: "Design & Development",
+    description: "Usually a one-time cost for a new design.",
+    items: [
+      "Concept discussion",
+      "CAD modeling",
+      "Prototypes",
+      "Revisions",
+      "Print preparation",
+    ],
+  },
+  {
+    title: "Production",
+    description: "Scales with the number of finished pieces.",
+    items: ["3D printing", "Materials", "Painting", "Assembly", "Packaging"],
+  },
+];
+
+const exampleRows = [
+  {
+    project: "Two custom awards",
+    design: "$150",
+    production: "2 x $25",
+    total: "~$200",
+  },
+  {
+    project: "Ten custom awards",
+    design: "$150",
+    production: "10 x $25",
+    total: "~$400",
+  },
+  {
+    project: "Existing design, ten awards",
+    design: "Included",
+    production: "10 x $25",
+    total: "~$250",
+  },
 ];
 ---
 
 <BaseLayout
   title="Pricing"
-  description="Pricing guidance for custom 3D printed awards, props, and display pieces."
+  description="Transparent pricing examples for custom design, 3D printing, painting, finishing, and assembly."
 >
   <section class="section">
     <div class="container split">
       <div class="stack">
         <p class="eyebrow">Pricing</p>
-        <h1>Custom awards typically start around $300.</h1>
-        <p class="lead">
-          Every project is different, so pricing is estimated after the shape, scope, and
-          production details are understood.
-        </p>
+        <h1>How custom projects are priced.</h1>
       </div>
-      <aside class="panel price-callout" aria-label="Starting price">
-        <p class="eyebrow">Typical starting point</p>
-        <p class="price">$300+</p>
-        <p>
-          Best for custom awards, small batches, display pieces, and objects that need
-          design time as well as production time.
-        </p>
-      </aside>
+      <p class="lead">
+        Custom work is usually priced in two parts: the design and development required to
+        create the piece, and the production cost to make each finished copy.
+      </p>
     </div>
   </section>
 
   <section class="section-tight">
-    <div class="container split">
-      <div class="stack">
-        <p class="eyebrow">What affects cost</p>
-        <h2>Pricing depends on the full build, not just the print.</h2>
+    <div class="container pricing-component-grid">
+      {
+        pricingComponents.map((component) => (
+          <article class="pricing-component">
+            <div class="stack">
+              <h2>{component.title}</h2>
+              <p>{component.description}</p>
+            </div>
+            <ul class="list">
+              {component.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <div class="section-heading pricing-heading">
+        <div>
+          <p class="eyebrow">Examples</p>
+          <h2>Example pricing model</h2>
+        </div>
+        <p>
+          These numbers are examples only. They are here to show the structure, not to act as
+          a fixed price list.
+        </p>
       </div>
-      <div class="panel">
-        <ul class="list">
-          {pricingFactors.map((factor) => <li>{factor}</li>)}
-        </ul>
+
+      <div class="pricing-table-wrap" aria-label="Example custom project pricing">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th scope="col">Example Project</th>
+              <th scope="col">Design & Development</th>
+              <th scope="col">Production</th>
+              <th scope="col">Estimated Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              exampleRows.map((row) => (
+                <tr>
+                  <th scope="row">{row.project}</th>
+                  <td>{row.design}</td>
+                  <td>{row.production}</td>
+                  <td>{row.total}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pricing-note-grid">
+        <aside class="panel stack">
+          <h2>What changes the estimate</h2>
+          <p>
+            Every project is unique, so final pricing depends on complexity, materials,
+            print time, painting, finishing, and assembly. This table is intended to
+            illustrate how custom projects are typically priced rather than serve as a
+            fixed price list.
+          </p>
+        </aside>
+        <aside class="panel stack">
+          <h2>Future orders</h2>
+          <p>
+            Once a custom design has been created, future orders of the same design are
+            often less expensive because the initial design and prototyping work has
+            already been completed.
+          </p>
+        </aside>
       </div>
     </div>
   </section>

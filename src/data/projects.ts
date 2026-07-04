@@ -9,39 +9,48 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Pickleball awards",
+    title: "Pickleball tournament awards",
     slug: "pickleball-awards",
     summary:
-      "Custom award concepts for tournaments, leagues, and event winners with room for names, logos, and finish details.",
-    image: "/images/pickleball-awards.svg",
-    alt: "Placeholder artwork for pickleball award designs.",
-    tags: ["Awards", "Events", "Finishing"],
+      "Custom tournament awards designed, printed, finished, and assembled for a specific event.",
+    image: "/images/portfolio/pickleball-tournament-awards.jpg",
+    alt: "Pickleball tournament awards.",
+    tags: ["Awards", "Event work", "Finishing"],
   },
   {
-    title: "Gym challenge medals",
+    title: "Fitness challenge medals",
     slug: "gym-challenge-medals",
     summary:
-      "Durable medals and achievement pieces for gym challenges, member milestones, and internal competitions.",
-    image: "/images/gym-medals.svg",
-    alt: "Placeholder artwork for gym challenge medal designs.",
+      "Small-batch medals and achievement pieces for gym challenges and member milestones.",
+    image: "/images/portfolio/fitness-challenge-medals.jpg",
+    alt: "Fitness challenge medals.",
     tags: ["Medals", "Fitness", "Small batches"],
   },
   {
     title: "Company robot awards",
     slug: "company-robot-awards",
     summary:
-      "Playful branded robot awards built for company recognition, team milestones, and memorable desk display.",
-    image: "/images/robot-awards.svg",
-    alt: "Placeholder artwork for company robot award designs.",
+      "Branded recognition pieces with custom modeling, print planning, finishing, and assembly.",
+    image: "/images/portfolio/company-robot-awards.jpg",
+    alt: "Company robot awards.",
     tags: ["Brand objects", "Awards", "Display"],
   },
   {
-    title: "Custom props and display pieces",
+    title: "Large Space Needle print",
+    slug: "large-space-needle-print",
+    summary:
+      "A large-format printed display piece used as a scale and finishing reference for ambitious builds.",
+    image: "/images/portfolio/large-space-needle-print.jpg",
+    alt: "Large 3D printed Space Needle display piece.",
+    tags: ["Large print", "Display", "Assembly"],
+  },
+  {
+    title: "Props and display pieces",
     slug: "custom-props-display-pieces",
     summary:
-      "One-off and small-run props, display forms, and printed objects designed to look right in person and on camera.",
-    image: "/images/props-display.svg",
-    alt: "Placeholder artwork for custom props and display pieces.",
+      "One-off props, display forms, and printed objects built for the intended setting.",
+    image: "/images/portfolio/props-display-pieces.jpg",
+    alt: "Props and display pieces.",
     tags: ["Props", "Displays", "Design"],
   },
 ];

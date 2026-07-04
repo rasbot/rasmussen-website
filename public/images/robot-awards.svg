@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
   <title id="title">Placeholder image for company robot awards</title>
-  <desc id="desc">Minimal placeholder artwork showing a stylized robot trophy.</desc>
-  <rect width="1200" height="800" fill="#e7ece8"/>
-  <rect x="122" y="102" width="956" height="596" rx="30" fill="#f8f5ef"/>
-  <rect x="420" y="238" width="360" height="292" rx="38" fill="#2f4f5f"/>
-  <rect x="492" y="314" width="64" height="64" rx="18" fill="#f8f5ef"/>
-  <rect x="644" y="314" width="64" height="64" rx="18" fill="#f8f5ef"/>
-  <path d="M510 438h180" stroke="#f8f5ef" stroke-width="28" stroke-linecap="round"/>
-  <path d="M600 238v-76" stroke="#2f4f5f" stroke-width="24" stroke-linecap="round"/>
-  <circle cx="600" cy="142" r="28" fill="#c96f4a"/>
-  <path d="M420 414H302M780 414h118" stroke="#2f4f5f" stroke-width="34" stroke-linecap="round"/>
-  <rect x="456" y="530" width="288" height="86" rx="18" fill="#c9a14a"/>
-  <rect x="350" y="616" width="500" height="24" rx="12" fill="#2b2a27" opacity=".15"/>
-  <text x="600" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" fill="#2b2a27">Company Robot Awards</text>
+  <desc id="desc">Dark studio-style placeholder showing a finished robot award on a display base.</desc>
+  <rect width="1200" height="800" fill="#171817"/>
+  <rect x="78" y="76" width="1044" height="648" rx="18" fill="#20221f"/>
+  <rect x="414" y="226" width="372" height="310" rx="28" fill="#3c4336"/>
+  <rect x="492" y="318" width="62" height="62" rx="14" fill="#d8cfbd"/>
+  <rect x="646" y="318" width="62" height="62" rx="14" fill="#d8cfbd"/>
+  <path d="M512 444h176" stroke="#d8cfbd" stroke-width="26" stroke-linecap="round"/>
+  <path d="M600 226v-80" stroke="#3c4336" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="600" cy="130" r="27" fill="#b08a4a"/>
+  <path d="M414 416H292M786 416h122" stroke="#3c4336" stroke-width="32" stroke-linecap="round"/>
+  <rect x="448" y="536" width="304" height="84" rx="12" fill="#7c6d55"/>
+  <rect x="350" y="620" width="500" height="22" rx="11" fill="#d8cfbd" opacity=".14"/>
+  <text x="600" y="684" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#d8cfbd">Company Robot Awards</text>
 </svg>

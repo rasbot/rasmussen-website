@@ -4,28 +4,36 @@ import { projects } from "../data/projects";
 import { site } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const featuredProjects = projects.slice(0, 2);
+const featuredProjects = projects.slice(0, 3);
+
+const capabilities = [
+  "Custom Design",
+  "Prototyping",
+  "3D Printing",
+  "Painting & Finishing",
+  "Assembly",
+];
 ---
 
 <BaseLayout title="Home" description={site.description}>
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Custom 3D printed work</p>
-        <h1>Awards, props, and display pieces made for real-world moments.</h1>
+        <p class="eyebrow">Nathan Rasmussen Design</p>
+        <h1>Custom-designed awards, props, and display pieces.</h1>
         <p class="lead">
-          Nathan Rasmussen Design creates custom 3D printed awards, branded objects,
-          props, display pieces, and print-ready designs for small batches and one-off builds.
+          I design, prototype, 3D print, paint, and assemble custom pieces for businesses,
+          events, and special projects.
         </p>
         <div class="button-row" aria-label="Primary actions">
-          <a class="button" href="/portfolio/">View portfolio</a>
-          <a class="button secondary" href="/contact/">Start a project</a>
+          <a class="button" href="/portfolio/">View Portfolio</a>
+          <a class="button secondary" href="/contact/">Request a Quote</a>
         </div>
       </div>
       <figure class="hero-media">
         <img
-          src="/images/robot-awards.svg"
-          alt="Placeholder artwork showing a custom robot award concept."
+          src="/images/nathan-space-needle.jpg"
+          alt="Nathan with a 5.5-foot 3D printed Space Needle."
           width="1200"
           height="800"
         />
@@ -36,12 +44,12 @@ const featuredProjects = projects.slice(0, 2);
   <section class="section-tight">
     <div class="container section-heading">
       <div>
-        <p class="eyebrow">Selected work</p>
-        <h2>Built to feel specific.</h2>
+        <p class="eyebrow">Selected projects</p>
+        <h2>Custom work, finished by hand.</h2>
       </div>
       <p>
-        Placeholder images are in use for now. The project data is centralized so real photos
-        and descriptions can be swapped in cleanly.
+        Awards, props, and display pieces built around the client, the event, and the final
+        presentation.
       </p>
     </div>
     <div class="container project-grid">
@@ -52,18 +60,33 @@ const featuredProjects = projects.slice(0, 2);
   <section class="section">
     <div class="container split">
       <div class="stack">
-        <p class="eyebrow">What this is for</p>
-        <h2>Referral-friendly custom design without a heavy agency process.</h2>
+        <p class="eyebrow">Process</p>
+        <h2>More than sending a file to a printer.</h2>
       </div>
-      <div class="panel stack">
+      <div class="capability-grid">
+        {capabilities.map((capability) => <article class="capability-card">{capability}</article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-band">
+    <div class="container about-grid">
+      <figure class="about-media">
+        <img
+          src="/images/portfolio/nathan-printer.jpg"
+          alt="Nathan working near a 3D printer."
+          width="1200"
+          height="800"
+          loading="lazy"
+        />
+      </figure>
+      <div class="stack">
+        <p class="eyebrow">Hi, I'm Nathan</p>
+        <h2>I build custom pieces from scratch.</h2>
         <p>
-          The work starts with a practical idea: a tournament needs an award, a team needs
-          a memorable recognition piece, or a display needs an object that does not exist off
-          the shelf.
-        </p>
-        <p>
-          From there, the project can include design, 3D modeling, printing, painting,
-          finishing, and assembly depending on what the piece needs.
+          I design, prototype, 3D print, paint, and assemble custom awards, props,
+          and display pieces. Every project is tailored to the client's needs, from concept
+          through the final finish.
         </p>
       </div>
     </div>

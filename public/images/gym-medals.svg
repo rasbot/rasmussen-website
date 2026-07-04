@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
-  <title id="title">Placeholder image for gym challenge medals</title>
-  <desc id="desc">Minimal placeholder artwork showing medals and ribbon shapes.</desc>
-  <rect width="1200" height="800" fill="#efece6"/>
-  <rect x="118" y="98" width="964" height="604" rx="30" fill="#fbf8f2"/>
-  <path d="M394 138 530 350h-98L298 138z" fill="#2e6f6d"/>
-  <path d="M806 138 670 350h98L902 138z" fill="#9e4f39"/>
-  <circle cx="600" cy="446" r="160" fill="#c9a14a"/>
-  <circle cx="600" cy="446" r="108" fill="#fbf8f2" opacity=".68"/>
-  <path d="M512 448h176M600 360v176" stroke="#2b2a27" stroke-width="34" stroke-linecap="round"/>
-  <rect x="330" y="630" width="540" height="24" rx="12" fill="#2b2a27" opacity=".15"/>
-  <text x="600" y="676" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" fill="#2b2a27">Gym Challenge Medals</text>
+  <title id="title">Placeholder image for fitness challenge medals</title>
+  <desc id="desc">Dark studio-style placeholder showing finished medals on a workbench.</desc>
+  <rect width="1200" height="800" fill="#171817"/>
+  <rect x="82" y="78" width="1036" height="644" rx="18" fill="#22231f"/>
+  <path d="M390 132 536 352h-98L292 132z" fill="#62684c"/>
+  <path d="M810 132 664 352h98L908 132z" fill="#7c6d55"/>
+  <circle cx="600" cy="454" r="164" fill="#b08a4a"/>
+  <circle cx="600" cy="454" r="110" fill="#282923"/>
+  <path d="M516 454h168M600 370v168" stroke="#d8cfbd" stroke-width="32" stroke-linecap="round"/>
+  <rect x="310" y="626" width="580" height="22" rx="11" fill="#d8cfbd" opacity=".15"/>
+  <text x="600" y="682" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#d8cfbd">Fitness Challenge Medals</text>
 </svg>
