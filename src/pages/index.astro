@@ -9,23 +9,23 @@ const featuredProjects = projects.slice(0, 3);
 const capabilities = [
   {
     title: "Custom Design",
-    description: "Original concepts, project planning, and thoughtful customization.",
+    description: "Original concepts and thoughtful customization.",
   },
   {
     title: "Prototyping",
-    description: "Iterative test prints to refine fit, appearance, and function.",
+    description: "Iterative test prints to refine the design.",
   },
   {
     title: "3D Printing",
-    description: "High-quality production using reliable materials and tuned print settings.",
+    description: "High-quality production with tuned settings.",
   },
   {
     title: "Painting & Finishing",
-    description: "Surface preparation, painting, assembly, and finishing touches.",
+    description: "Surface preparation and finishing.",
   },
   {
     title: "Assembly",
-    description: "Careful final assembly and inspection before delivery.",
+    description: "Final inspection and delivery.",
   },
 ];
 ---
@@ -73,18 +73,21 @@ const capabilities = [
   </section>
 
   <section class="section">
-    <div class="container split">
+    <div class="container process-layout">
       <div class="stack">
         <p class="eyebrow">Process</p>
         <h2>More than sending a file to a printer.</h2>
       </div>
       <div class="capability-grid">
         {
-          capabilities.map((capability) => (
-            <article class="capability-card">
-              <h3>{capability.title}</h3>
-              <p>{capability.description}</p>
-            </article>
+          capabilities.map((capability, index) => (
+            <>
+              <article class="capability-card">
+                <h3>{capability.title}</h3>
+                <p>{capability.description}</p>
+              </article>
+              {index < capabilities.length - 1 && <span class="process-arrow" aria-hidden="true">↓</span>}
+            </>
           ))
         }
       </div>
@@ -104,7 +107,7 @@ const capabilities = [
       </figure>
       <div class="stack">
         <p class="eyebrow">Hi, I'm Nathan</p>
-        <h2>I turn ideas into finished pieces.</h2>
+        <h2>I like making things.</h2>
         <p>
           I design, prototype, 3D print, paint, and assemble custom awards, props, and
           display pieces. Some projects involve original CAD work, some start with adaptation,
