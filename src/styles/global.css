@@ -368,6 +368,43 @@ p {
   padding: 24px;
 }
 
+.service-progression {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.service-step {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.service-step img {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 16%);
+}
+
+.service-step figcaption {
+  color: var(--muted-strong);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.service-arrow {
+  color: var(--accent);
+  font-size: 1.4rem;
+  line-height: 1;
+  opacity: 0.82;
+}
+
 .process-layout {
   display: grid;
   gap: clamp(26px, 4vw, 42px);
@@ -589,6 +626,19 @@ p {
   .pricing-component-grid,
   .pricing-note-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-progression {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .service-step {
+    width: min(100%, 360px);
+  }
+
+  .service-arrow {
+    transform: rotate(90deg);
   }
 }
 

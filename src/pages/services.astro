@@ -28,6 +28,29 @@ const services = [
       "Multi-part builds, mounting, joining, and final preparation so the piece is ready to hand over.",
   },
 ];
+
+const serviceProgression = [
+  {
+    title: "Model",
+    image: "/images/services/model.jpg",
+    alt: "Digital model prepared for a custom project.",
+  },
+  {
+    title: "Print",
+    image: "/images/services/print.jpg",
+    alt: "3D printed parts in progress.",
+  },
+  {
+    title: "Assemble",
+    image: "/images/services/assemble.jpg",
+    alt: "Custom pieces being assembled.",
+  },
+  {
+    title: "Complete",
+    image: "/images/services/complete.jpg",
+    alt: "Finished custom piece ready for delivery.",
+  },
+];
 ---
 
 <BaseLayout
@@ -44,6 +67,24 @@ const services = [
         Custom awards and display pieces usually need more than a print file. The work can
         include concepting, modeling, test prints, production, paint, finish, and final assembly.
       </p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container service-progression" aria-label="Service process image progression">
+      {
+        serviceProgression.map((step, index) => (
+          <>
+            <figure class="service-step">
+              <img src={step.image} alt={step.alt} width="900" height="900" loading="lazy" />
+              <figcaption>{step.title}</figcaption>
+            </figure>
+            {index < serviceProgression.length - 1 && (
+              <span class="service-arrow" aria-hidden="true">→</span>
+            )}
+          </>
+        ))
+      }
     </div>
   </section>
 
