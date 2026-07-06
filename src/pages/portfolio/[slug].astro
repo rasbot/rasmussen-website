@@ -31,6 +31,16 @@ const gallery = project.gallery?.length
         </div>
         <figure class="project-detail-media">
           <img src={heroImage} alt={project.alt} width="1200" height="1200" />
+          {
+            project.heroCredit && (
+              <figcaption>
+                Photo by{" "}
+                <a href={project.heroCredit.url} target="_blank" rel="noreferrer">
+                  {project.heroCredit.name}
+                </a>
+              </figcaption>
+            )
+          }
         </figure>
       </div>
     </section>

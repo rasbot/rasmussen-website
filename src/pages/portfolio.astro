@@ -26,6 +26,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       if (categoryProjects.length === 0) {
         return null;
       }
+      const useCompactGrid = category.compact && categoryProjects.length > 1;
+      const useFeaturedGrid = !useCompactGrid && categoryProjects.length >= 4;
 
       return (
         <section class="portfolio-category">
@@ -36,12 +38,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
               <p>{category.intro}</p>
             </div>
-            <div class={category.compact ? "project-grid project-grid-compact" : "project-grid project-grid-featured"}>
+            <div
+              class={
+                useCompactGrid
+                  ? "project-grid project-grid-compact"
+                  : useFeaturedGrid
+                    ? "project-grid project-grid-featured"
+                    : "project-grid"
+              }
+            >
               {categoryProjects.map((project, index) => (
                 <ProjectCard
                   project={project}
-                  compact={category.compact}
-                  featured={!category.compact && index === 0}
+                  compact={useCompactGrid}
+                  featured={useFeaturedGrid && index === 0}
                 />
               ))}
             </div>

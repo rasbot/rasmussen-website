@@ -3,12 +3,18 @@ export type ProjectImage = {
   caption: string;
 };
 
+export type ProjectCredit = {
+  name: string;
+  url: string;
+};
+
 export type Project = {
   title: string;
   slug: string;
   summary: string;
   coverImage: string;
   heroImage?: string;
+  heroCredit?: ProjectCredit;
   alt: string;
   category: string;
   featured?: boolean;
@@ -48,6 +54,10 @@ export const projects: Project[] = [
       "pickleball-awards",
       "pickleball-awards-displayed.jpg",
     ),
+    heroCredit: {
+      name: "Kris Ladera",
+      url: "https://www.instagram.com/thepickleshots/",
+    },
     alt: "Pickleball tournament awards.",
     category: "awards-recognition",
     featured: true,
