@@ -345,10 +345,6 @@ p {
   background: #1b1c1a;
 }
 
-.project-card-featured img {
-  aspect-ratio: 4 / 3;
-}
-
 .project-card-body {
   display: grid;
   align-content: start;
@@ -382,7 +378,6 @@ p {
 
 .project-detail-media {
   margin: 0;
-  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -390,9 +385,9 @@ p {
 }
 
 .project-detail-media img {
-  aspect-ratio: 1 / 1;
   width: 100%;
-  object-fit: cover;
+  max-height: min(72vh, 760px);
+  object-fit: contain;
 }
 
 .project-detail-grid {
@@ -408,13 +403,26 @@ p {
   gap: 18px;
 }
 
+.project-detail-gallery figure {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  margin: 0;
+}
+
 .project-detail-gallery img {
-  aspect-ratio: 1 / 1;
   width: 100%;
-  object-fit: cover;
+  max-height: 520px;
+  object-fit: contain;
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
   background: var(--surface);
+}
+
+.project-detail-gallery figcaption {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .split {

@@ -14,7 +14,10 @@ if (!project) {
   return Astro.redirect("/portfolio/");
 }
 
-const gallery = project.gallery?.length ? project.gallery : [project.image];
+const heroImage = project.heroImage ?? project.coverImage;
+const gallery = project.gallery?.length
+  ? project.gallery
+  : [{ src: heroImage, caption: project.title }];
 ---
 
 <BaseLayout title={project.title} description={project.summary}>
@@ -27,7 +30,7 @@ const gallery = project.gallery?.length ? project.gallery : [project.image];
           <p class="lead">{project.description}</p>
         </div>
         <figure class="project-detail-media">
-          <img src={project.image} alt={project.alt} width="1200" height="1200" />
+          <img src={heroImage} alt={project.alt} width="1200" height="1200" />
         </figure>
       </div>
     </section>
@@ -66,7 +69,14 @@ const gallery = project.gallery?.length ? project.gallery : [project.image];
           </div>
         </div>
         <div class="project-detail-gallery">
-          {gallery.map((image) => <img src={image} alt={project.alt} loading="lazy" />)}
+          {
+            gallery.map((image) => (
+              <figure>
+                <img src={image.src} alt={project.alt} loading="lazy" />
+                <figcaption>{image.caption}</figcaption>
+              </figure>
+            ))
+          }
         </div>
       </div>
     </section>
