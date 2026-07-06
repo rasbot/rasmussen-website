@@ -3,15 +3,26 @@ import type { Project } from "../data/projects";
 
 type Props = {
   project: Project;
+  compact?: boolean;
+  featured?: boolean;
 };
 
-const { project } = Astro.props;
+const { project, compact = false, featured = false } = Astro.props;
+const className = [
+  "project-card",
+  compact ? "project-card-compact" : "",
+  featured ? "project-card-featured" : "",
+]
+  .filter(Boolean)
+  .join(" ");
 ---
 
-<article class="project-card" id={project.slug}>
-  <img src={project.image} alt={project.alt} loading="lazy" />
-  <div class="project-card-body">
-    <h3>{project.title}</h3>
-    <p>{project.summary}</p>
-  </div>
+<article class={className} id={project.slug}>
+  <a class="project-card-link" href={`/portfolio/${project.slug}/`}>
+    <img src={project.coverImage} alt={project.alt} loading="lazy" />
+    <div class="project-card-body">
+      <h3>{project.title}</h3>
+      <p>{project.summary}</p>
+    </div>
+  </a>
 </article>

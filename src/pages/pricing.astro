@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pricingComponents = [
   {
     title: "Design & Development",
-    description: "Usually a one-time cost for a new design.",
+    description: "Usually a one-time cost to prepare a new production-ready design.",
     items: [
       "Concept discussion",
       "CAD modeling",
@@ -15,7 +15,7 @@ const pricingComponents = [
   },
   {
     title: "Production",
-    description: "Scales with the number of finished pieces.",
+    description: "The per-piece cost for making the final quantity.",
     items: ["3D printing", "Materials", "Painting", "Assembly", "Packaging"],
   },
 ];
@@ -34,7 +34,7 @@ const exampleRows = [
     total: "~$400",
   },
   {
-    project: "Existing design, ten awards",
+    project: "Production-ready 3D model, ten awards",
     design: "Included",
     production: "10 x $25",
     total: "~$250",
@@ -53,8 +53,8 @@ const exampleRows = [
         <h1>How custom projects are priced.</h1>
       </div>
       <p class="lead">
-        Custom work is usually priced in two parts: the design and development required to
-        create the piece, and the production cost to make each finished copy.
+        Pricing usually has two parts: the upfront work required to prepare the design,
+        and the production cost for the number of finished pieces being made.
       </p>
     </div>
   </section>
@@ -121,16 +121,18 @@ const exampleRows = [
           <p>
             Every project is unique, so final pricing depends on complexity, materials,
             print time, painting, finishing, and assembly. This table is intended to
-            illustrate how custom projects are typically priced rather than serve as a
+            illustrate how estimates are usually structured rather than serve as a
             fixed price list.
           </p>
         </aside>
         <aside class="panel stack">
           <h2>Future orders</h2>
           <p>
-            Once a custom design has been created, future orders of the same design are
-            often less expensive because the initial design and prototyping work has
-            already been completed.
+            Once a 3D-modeled design has been created and tested, future orders of the
+            same design are often less expensive because the initial design and prototyping
+            work has already been completed. A sketch, logo, photo, or reference image can
+            help guide the project, but it usually still requires design and development
+            work before production.
           </p>
         </aside>
       </div>

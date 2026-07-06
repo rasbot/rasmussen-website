@@ -1,6 +1,6 @@
 ---
 import ProjectCard from "../components/ProjectCard.astro";
-import { projects } from "../data/projects";
+import { getProjectsByCategory, projectCategories } from "../data/projects";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -11,17 +11,53 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section">
     <div class="container stack">
       <p class="eyebrow">Portfolio</p>
-      <h1>Custom awards, props, and display pieces.</h1>
+      <h1>Selected work by category.</h1>
       <p class="lead">
-        Placeholder images are in use for now. Real project photos and descriptions can be
-        swapped through the shared project data.
+        This section is for representative projects, not every object that comes off the printer.
+        The goal is to show the range of work, the level of finish, and the kinds of problems each
+        category is suited for.
       </p>
     </div>
   </section>
 
-  <section class="section-tight">
-    <div class="container project-grid">
-      {projects.map((project) => <ProjectCard project={project} />)}
-    </div>
-  </section>
+  {
+    projectCategories.map((category) => {
+      const categoryProjects = getProjectsByCategory(category.id);
+      if (categoryProjects.length === 0) {
+        return null;
+      }
+      const useCompactGrid = category.compact && categoryProjects.length > 1;
+      const useFeaturedGrid = !useCompactGrid && categoryProjects.length >= 4;
+
+      return (
+        <section class="portfolio-category">
+          <div class="container">
+            <div class="section-heading portfolio-category-heading">
+              <div>
+                <h2>{category.title}</h2>
+              </div>
+              <p>{category.intro}</p>
+            </div>
+            <div
+              class={
+                useCompactGrid
+                  ? "project-grid project-grid-compact"
+                  : useFeaturedGrid
+                    ? "project-grid project-grid-featured"
+                    : "project-grid"
+              }
+            >
+              {categoryProjects.map((project, index) => (
+                <ProjectCard
+                  project={project}
+                  compact={useCompactGrid}
+                  featured={useFeaturedGrid && index === 0}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    })
+  }
 </BaseLayout>

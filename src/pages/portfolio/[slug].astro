@@ -1,0 +1,94 @@
+---
+import { getProjectBySlug, projects } from "../../data/projects";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+  }));
+}
+
+const project = getProjectBySlug(Astro.params.slug ?? "");
+
+if (!project) {
+  return Astro.redirect("/portfolio/");
+}
+
+const heroImage = project.heroImage ?? project.coverImage;
+const gallery = project.gallery?.length
+  ? project.gallery
+  : [{ src: heroImage, caption: project.title }];
+---
+
+<BaseLayout title={project.title} description={project.summary}>
+  <article>
+    <section class="section">
+      <div class="container project-detail-hero">
+        <div class="stack">
+          <p class="eyebrow">Portfolio</p>
+          <h1>{project.title}</h1>
+          <p class="lead">{project.description}</p>
+        </div>
+        <figure class="project-detail-media">
+          <img src={heroImage} alt={project.alt} width="1200" height="1200" />
+          {
+            project.heroCredit && (
+              <figcaption>
+                Photo by{" "}
+                <a href={project.heroCredit.url} target="_blank" rel="noreferrer">
+                  {project.heroCredit.name}
+                </a>
+              </figcaption>
+            )
+          }
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container project-detail-grid">
+        <section class="panel stack">
+          <h2>Design challenges</h2>
+          <ul class="list">
+            {project.challenges.map((challenge) => <li>{challenge}</li>)}
+          </ul>
+        </section>
+
+        {
+          project.fabrication && (
+            <section class="panel stack">
+              <h2>Materials / fabrication notes</h2>
+              <p>{project.fabrication}</p>
+            </section>
+          )
+        }
+
+        <section class="panel stack">
+          <h2>Final outcome</h2>
+          <p>{project.outcome}</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Gallery</p>
+            <h2>Project images</h2>
+          </div>
+        </div>
+        <div class="project-detail-gallery">
+          {
+            gallery.map((image) => (
+              <figure>
+                <img src={image.src} alt={project.alt} loading="lazy" />
+                <figcaption>{image.caption}</figcaption>
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
