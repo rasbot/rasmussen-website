@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title: "Pickleball tournament awards",
     slug: "pickleball-awards",
     summary:
-      "Event awards with a cleaner, more personal feel than a stock trophy.",
+      "Tournament awards styled around the event, with a more personal feel than a stock trophy.",
     coverImage: portfolioImage(
       "awards-and-recognition",
       "pickleball-awards",
@@ -72,7 +72,7 @@ export const projects: Project[] = [
       ),
     ],
     description:
-      "A tournament award project focused on presentation, repeatability, and a finished object that felt specific to the event.",
+      "A tournament award project shaped around the event branding, with a playful bronze, silver, and gold treatment to distinguish each placement.",
     challenges: [
       "Create an award that felt specific to the tournament.",
       "Balance durable printed parts with a polished final finish.",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     title: "Fitness challenge medals",
     slug: "gym-challenge-medals",
     summary:
-      "Small-batch medals made for challenge winners and member milestones.",
+      "Ongoing challenge medals with a consistent event-medal style, branded for each specific gym challenge.",
     coverImage: portfolioImage(
       "awards-and-recognition",
       "gym-challenge-medals",
@@ -116,22 +116,22 @@ export const projects: Project[] = [
       ),
     ],
     description:
-      "A compact recognition piece where readability, batch consistency, and a clean handoff mattered more than heavy ornament.",
+      "An ongoing medal project inspired by running-event medals, with each challenge getting its own branded variation while keeping the overall style consistent across the series.",
     challenges: [
-      "Keep the medals clean and readable at a small scale.",
-      "Make the pieces feel intentional without overcomplicating production.",
-      "Maintain consistency across the batch.",
+      "Create a recognizable medal style that can carry across multiple challenges.",
+      "Give each challenge its own branding and theme without making the series feel inconsistent.",
+      "Keep the pieces readable, repeatable, and practical to produce in small batches.",
     ],
     fabrication:
-      "Printed medal forms with finish work and preparation for final presentation.",
+      "Multi-color printed medal components with gluing, finishing, and ribbon added for final presentation.",
     outcome:
-      "A batch of achievement pieces that gave the challenge a more tangible and memorable result.",
+      "An ongoing series of achievement pieces that gives each gym challenge a more tangible and memorable result.",
   },
   {
     title: "Company robot awards",
     slug: "company-robot-awards",
     summary:
-      "Playful recognition pieces built around a robot form and finished for display.",
+      "Company event awards built around a branded robot mascot from the business.",
     coverImage: portfolioImage(
       "awards-and-recognition",
       "company-robot-awards",
@@ -166,16 +166,16 @@ export const projects: Project[] = [
       ),
     ],
     description:
-      "A company recognition project that used a robot form as the starting point for a displayable award object.",
+      "A company recognition project that used one of the business mascots as the basis for displayable event awards.",
     challenges: [
-      "Translate a brand-friendly idea into a physical object.",
-      "Keep the piece displayable and sturdy enough for handling.",
-      "Coordinate modeling, printing, finishing, and final assembly.",
+      "Translate a recognizable company mascot into a physical award object.",
+      "Keep the piece displayable and sturdy enough for handling at the event.",
+      "Coordinate modeling, printing, finishing, and final assembly while preserving the character of the mascot.",
     ],
     fabrication:
-      "Custom printed parts with post-processing, finishing, and assembly into a completed award object.",
+      "Custom printed parts with post-processing, finishing, and assembly into completed robot award pieces.",
     outcome:
-      "Recognition pieces with enough personality to sit on a desk or shelf after the event.",
+      "Branded recognition pieces with enough personality to sit on a desk or shelf after the company event.",
   },
   {
     title: "Company logo awards",
@@ -218,7 +218,7 @@ export const projects: Project[] = [
     title: "Company goat awards",
     slug: "company-goat-awards",
     summary:
-      "Custom recognition pieces using a more character-driven award form.",
+      "Personalized data team awards built around an internal company goat mascot.",
     coverImage: portfolioImage(
       "awards-and-recognition",
       "company-goat-awards",
@@ -240,16 +240,16 @@ export const projects: Project[] = [
       ),
     ],
     description:
-      "A recognition project built around a distinctive award form with enough personality to feel specific to the recipient.",
+      "A company recognition project for the data team, combining the internal goat mascot with the company logo to create personalized award pieces.",
     challenges: [
-      "Make the form feel intentional rather than novelty-only.",
-      "Keep the piece sturdy enough for handling and display.",
-      "Finish the surface so the printed parts read as a complete object.",
+      "Turn an internal mascot into an award form that felt intentional and displayable.",
+      "Incorporate the company logo with a goat bust to create a unique award.",
+      "Personalize the awards without losing consistency across the set.",
     ],
     fabrication:
-      "3D printed parts with surface preparation, finishing, and final assembly.",
+      "3D printed goat award forms with logo details, surface preparation, finishing, and final assembly.",
     outcome:
-      "A displayable award object with a more personal, character-driven feel.",
+      "Personalized team awards that connected internal company culture with a finished display object.",
   },
   {
     title: "Large Space Needle print",
@@ -311,7 +311,7 @@ export const projects: Project[] = [
     title: "Company goat display",
     slug: "company-goat-display",
     summary:
-      "A branded display piece built around a bold, character-driven form.",
+      "A large company office gift combining the company logo with a giant goat display form.",
     coverImage: portfolioImage(
       "display-pieces",
       "company-goat-display",
@@ -340,22 +340,22 @@ export const projects: Project[] = [
       ),
     ],
     description:
-      "A company display project where the form needed to be recognizable, sturdy, and polished enough to stand on its own.",
+      "A display project created as a gift for the company office, combining the company logo with a large goat form tied to internal company culture.",
     challenges: [
-      "Keep the character of the form readable at display scale.",
-      "Plan the print and finish work around a visible final surface.",
-      "Make the object stable enough for presentation and handling.",
+      "Scale the goat form up into a display piece with enough presence for an office setting.",
+      "Incorporate the company logo while keeping the larger goat form clear and readable.",
+      "Finish the piece so it felt like a permanent office display rather than a temporary prop.",
     ],
     fabrication:
-      "Printed components with surface preparation, finishing, and final assembly.",
+      "Large printed components with surface preparation, finishing, and final assembly.",
     outcome:
-      "A branded display object with enough visual presence to anchor a shelf, desk, or event setup.",
+      "A branded office display piece that connected the company logo with an internal mascot in a more substantial finished object.",
   },
   {
     title: "Gym front desk display",
     slug: "gym-front-desk-display",
     summary:
-      "A practical branded display piece for a front desk or check-in area.",
+      "A holiday-branded gym gift combining a 3D modeled logo, gym equipment, and seasonal details.",
     coverImage: portfolioImage(
       "display-pieces",
       "gym-front-desk-display",
@@ -377,22 +377,22 @@ export const projects: Project[] = [
       ),
     ],
     description:
-      "A display piece designed for a gym front desk, where the object needed to be clear, durable, and easy to place in a working environment.",
+      "A front desk display created as a gift for the gym, combining a 3D modeled logo with gym equipment details and holiday branding like snowflakes and a Santa hat.",
     challenges: [
-      "Keep the display readable without taking up too much counter space.",
-      "Balance visual presence with everyday durability.",
-      "Finish the piece so it looked intentional in a customer-facing area.",
+      "Combine the gym logo, equipment details, and holiday elements into one readable display.",
+      "Keep the piece compact enough for a front desk while still feeling like a gift object.",
+      "Balance seasonal branding with a polished finish that fit the gym environment.",
     ],
     fabrication:
-      "Printed parts with finishing and assembly for a completed countertop display.",
+      "3D modeled and printed display components with finishing, assembly, and seasonal detail work.",
     outcome:
-      "A compact display piece that supports the space without feeling like temporary signage.",
+      "A compact front desk display that connected the gym's identity with a seasonal gift piece.",
   },
   {
     title: "Halloween prop pieces",
     slug: "custom-halloween-prop-pieces",
     summary:
-      "Decorative prop pieces where shape, surface, and theme carry the effect.",
+      "Custom Halloween prop pieces painted to look like aged, realistic skeletons.",
     coverImage: portfolioImage(
       "art-and-sculpture",
       "custom-halloween-prop-pieces",
@@ -427,16 +427,16 @@ export const projects: Project[] = [
       ),
     ],
     description:
-      "A set of Halloween-focused prop pieces where the finished surface, silhouette, and theme mattered more than mechanical function.",
+      "A set of custom Halloween prop pieces where unique printed forms were painted and finished to look like real skeletons and decorative bones.",
     challenges: [
       "Keep the forms readable and dramatic after printing.",
-      "Use finishing choices to support the theme of each piece.",
-      "Make the pieces feel complete rather than like raw printed parts.",
+      "Use paint and finishing choices to create a more realistic skeleton-like surface.",
+      "Make each piece feel unique and complete rather than like a raw printed part.",
     ],
     fabrication:
-      "Printed prop forms with surface preparation, finishing, and display-focused cleanup.",
+      "Printed prop forms with surface preparation, painting, finishing, and display-focused cleanup.",
     outcome:
-      "Themed prop pieces that work as finished decorative objects rather than simple prints.",
+      "Unique Halloween prop pieces that work as finished decorative objects with a more realistic skeletal look.",
   },
   {
     title: "Organization pieces",
