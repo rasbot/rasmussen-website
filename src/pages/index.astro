@@ -34,7 +34,7 @@ const capabilities = [
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Nathan Rasmussen Design</p>
+        <p class="hero-badge">Available for custom commissions</p>
         <h1>Custom-designed awards, props, and display pieces.</h1>
         <p class="lead">
           I make finished physical pieces for businesses, events, and special projects using
@@ -73,24 +73,24 @@ const capabilities = [
   </section>
 
   <section class="section">
-    <div class="container process-layout">
-      <div class="stack">
-        <p class="eyebrow">Process</p>
-        <h2>More than sending a file to a printer.</h2>
+    <div class="container">
+      <div class="section-heading center">
+        <div>
+          <p class="eyebrow">Process</p>
+          <h2>More than sending a file to a printer.</h2>
+        </div>
       </div>
-      <div class="capability-grid">
+      <ol class="process-steps">
         {
           capabilities.map((capability, index) => (
-            <>
-              <article class="capability-card">
-                <h3>{capability.title}</h3>
-                <p>{capability.description}</p>
-              </article>
-              {index < capabilities.length - 1 && <span class="process-arrow" aria-hidden="true">↓</span>}
-            </>
+            <li class="process-step">
+              <span class="step-num">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{capability.title}</h3>
+              <p>{capability.description}</p>
+            </li>
           ))
         }
-      </div>
+      </ol>
     </div>
   </section>
 

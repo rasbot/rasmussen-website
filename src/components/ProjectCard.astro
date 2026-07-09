@@ -19,10 +19,13 @@ const className = [
 
 <article class={className} id={project.slug}>
   <a class="project-card-link" href={`/portfolio/${project.slug}/`}>
-    <img src={project.coverImage} alt={project.alt} loading="lazy" />
+    <div class="project-card-media">
+      <img src={project.coverImage} alt={project.alt} loading="lazy" />
+    </div>
     <div class="project-card-body">
       <h3>{project.title}</h3>
       <p>{project.summary}</p>
+      <span class="card-cta">View project <span aria-hidden="true">→</span></span>
     </div>
   </a>
 </article>

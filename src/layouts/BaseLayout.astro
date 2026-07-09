@@ -11,6 +11,7 @@ const { title, description = site.description } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : site.name;
 const pathname = Astro.url.pathname;
 const normalizedPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -20,16 +21,33 @@ const normalizedPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0a0c0f" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>{pageTitle}</title>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
         <div class="container header-inner">
           <a class="brand" href="/" aria-label={`${site.name} home`}>
-            <strong>{site.name}</strong>
-            <span>{site.tagline}</span>
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" />
+                <path d="M3 7l9 5 9-5" />
+                <path d="M12 12v10" />
+              </svg>
+            </span>
+            <span class="brand-text">
+              <strong>{site.name}</strong>
+              <span>{site.tagline}</span>
+            </span>
           </a>
           <nav aria-label="Primary navigation">
             <ul class="nav-list">
@@ -53,15 +71,47 @@ const normalizedPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
           </nav>
         </div>
       </header>
-      <main>
+      <main id="main">
         <slot />
       </main>
       <footer class="site-footer">
-        <div class="container footer-inner">
-          <p>&copy; {new Date().getFullYear()} {site.name}</p>
-          <p>
-            <a href={`mailto:${site.email}`}>{site.email}</a>
-          </p>
+        <div class="container footer-grid">
+          <div class="footer-brand">
+            <strong>{site.name}</strong>
+            <p>
+              Custom awards, props, display pieces, and small-batch fabrication —
+              designed, printed, and finished by hand.
+            </p>
+          </div>
+          <nav aria-label="Footer navigation">
+            <p class="footer-heading">Explore</p>
+            <ul class="footer-links">
+              {
+                navLinks
+                  .filter((link) => link.href !== "/")
+                  .map((link) => (
+                    <li>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  ))
+              }
+            </ul>
+          </nav>
+          <div>
+            <p class="footer-heading">Get in touch</p>
+            <ul class="footer-links">
+              <li>
+                <a href={`mailto:${site.email}`}>{site.email}</a>
+              </li>
+              <li>
+                <a href="/contact/">Request a quote</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="container footer-bottom">
+          <p>&copy; {year} {site.name}. All rights reserved.</p>
+          <p>{site.tagline}</p>
         </div>
       </footer>
     </div>

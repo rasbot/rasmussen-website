@@ -74,15 +74,13 @@ const serviceProgression = [
     <div class="container service-progression" aria-label="Service process image progression">
       {
         serviceProgression.map((step, index) => (
-          <>
-            <figure class="service-step">
-              <img src={step.image} alt={step.alt} width="900" height="900" loading="lazy" />
-              <figcaption>{step.title}</figcaption>
-            </figure>
-            {index < serviceProgression.length - 1 && (
-              <span class="service-arrow" aria-hidden="true">→</span>
-            )}
-          </>
+          <figure class="service-step">
+            <img src={step.image} alt={step.alt} width="900" height="900" loading="lazy" />
+            <figcaption>
+              <span class="step-num">{String(index + 1).padStart(2, "0")}</span>
+              {step.title}
+            </figcaption>
+          </figure>
         ))
       }
     </div>
