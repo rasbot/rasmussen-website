@@ -31,22 +31,22 @@ const services = [
 
 const serviceProgression = [
   {
-    title: "Model",
+    title: "01 — Model",
     image: "/images/services/model.jpg",
     alt: "Digital model prepared for a custom project.",
   },
   {
-    title: "Print",
+    title: "02 — Print",
     image: "/images/services/print.jpg",
     alt: "3D printed parts in progress.",
   },
   {
-    title: "Assemble",
+    title: "03 — Assemble",
     image: "/images/services/assemble.jpg",
     alt: "Custom pieces being assembled.",
   },
   {
-    title: "Complete",
+    title: "04 — Complete",
     image: "/images/services/complete.jpg",
     alt: "Finished custom piece ready for delivery.",
   },
@@ -57,26 +57,26 @@ const serviceProgression = [
   title="Services"
   description="Custom 3D printed awards, props, display pieces, and design-for-3D-printing services."
 >
-  <section class="section">
-    <div class="container split">
-      <div class="stack">
-        <p class="eyebrow">Services</p>
-        <h1>From CAD model to finished object.</h1>
-      </div>
-      <p class="lead">
-        Most custom projects move through a few practical stages: define the object, prepare
-        the model, test what matters, print the parts, then finish and assemble the final piece.
-      </p>
+  <section class="container split">
+    <div>
+      <p class="eyebrow">Services</p>
+      <h1>From CAD model to finished object.</h1>
     </div>
+    <p class="lead">
+      Most custom projects move through a few practical stages: define the object, prepare
+      the model, test what matters, print the parts, then finish and assemble the final piece.
+    </p>
   </section>
 
-  <section class="section-tight">
+  <section class="service-progression-band">
     <div class="container service-progression" aria-label="Service process image progression">
       {
         serviceProgression.map((step, index) => (
           <>
             <figure class="service-step">
-              <img src={step.image} alt={step.alt} width="900" height="900" loading="lazy" />
+              <div class="figure-clip">
+                <img src={step.image} alt={step.alt} width="900" height="900" loading="lazy" />
+              </div>
               <figcaption>{step.title}</figcaption>
             </figure>
             {index < serviceProgression.length - 1 && (
@@ -88,16 +88,28 @@ const serviceProgression = [
     </div>
   </section>
 
-  <section class="section-tight">
-    <div class="container service-grid">
-      {
-        services.map((service) => (
-          <article class="service-item">
-            <h2>{service.title}</h2>
-            <p>{service.description}</p>
-          </article>
-        ))
-      }
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow eyebrow-plain">[ What's included ]</p>
+      <h2 style="font-size: 34px; margin-block: 12px 36px;">Five services, one workflow.</h2>
+      <div class="service-rows">
+        {
+          services.map((service, index) => (
+            <article class="service-row">
+              <span class="service-index">0{index + 1}</span>
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-band-inner">
+      <h2>Not sure which stage your project needs? Just describe it.</h2>
+      <a class="button" href="/contact/">Request a quote →</a>
     </div>
   </section>
 </BaseLayout>

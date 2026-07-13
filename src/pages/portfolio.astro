@@ -8,51 +8,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="Portfolio"
   description="Portfolio examples for custom 3D printed awards, medals, props, and display pieces."
 >
-  <section class="section">
-    <div class="container stack">
+  <section class="section-tight">
+    <div class="container stack" style="padding-top: 20px;">
       <p class="eyebrow">Portfolio</p>
-      <h1>Selected work by category.</h1>
-      <p class="lead">
-        This section is for representative projects, not every object that comes off the printer.
-        The goal is to show the range of work, the level of finish, and the kinds of problems each
-        category is suited for.
+      <h1 style="font-size: 52px; line-height: 1.02; max-width: 18ch;">
+        Selected work by category.
+      </h1>
+      <p class="lead" style="max-width: 64ch;">
+        Representative projects, not every object that comes off the printer. The goal is to
+        show the range of work, the level of finish, and the kinds of problems each category
+        is suited for.
       </p>
     </div>
   </section>
 
   {
-    projectCategories.map((category) => {
+    projectCategories.map((category, index) => {
       const categoryProjects = getProjectsByCategory(category.id);
       if (categoryProjects.length === 0) {
         return null;
       }
       const useCompactGrid = category.compact && categoryProjects.length > 1;
-      const useFeaturedGrid = !useCompactGrid && categoryProjects.length >= 4;
 
       return (
         <section class="portfolio-category">
           <div class="container">
-            <div class="section-heading portfolio-category-heading">
-              <div>
-                <h2>{category.title}</h2>
-              </div>
+            <div class="portfolio-category-heading">
+              <h2>
+                <span class="cat-index">0{index + 1}</span>
+                {category.title}
+              </h2>
               <p>{category.intro}</p>
             </div>
-            <div
-              class={
-                useCompactGrid
-                  ? "project-grid project-grid-compact"
-                  : useFeaturedGrid
-                    ? "project-grid project-grid-featured"
-                    : "project-grid"
-              }
-            >
-              {categoryProjects.map((project, index) => (
-                <ProjectCard
-                  project={project}
-                  compact={useCompactGrid}
-                  featured={useFeaturedGrid && index === 0}
-                />
+            <div class={useCompactGrid ? "project-grid project-grid-compact" : "project-grid"}>
+              {categoryProjects.map((project) => (
+                <ProjectCard project={project} compact={useCompactGrid} />
               ))}
             </div>
           </div>
@@ -60,4 +50,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       );
     })
   }
+
+  <section class="cta-band" style="margin-top: 68px;">
+    <div class="container cta-band-inner">
+      <h2>Have a project in mind? Send the practical details.</h2>
+      <a class="button" href="/contact/">Request a quote →</a>
+    </div>
+  </section>
 </BaseLayout>

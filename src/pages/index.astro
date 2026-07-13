@@ -4,11 +4,11 @@ import { projects } from "../data/projects";
 import { site } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const featuredProjects = projects.slice(0, 3);
+const featuredProjects = projects.filter((project) => project.featured);
 
 const capabilities = [
   {
-    title: "Custom Design",
+    title: "Custom design",
     description: "Project-specific forms, proportions, and details.",
   },
   {
@@ -16,12 +16,12 @@ const capabilities = [
     description: "Test prints for fit, scale, and appearance.",
   },
   {
-    title: "3D Printing",
-    description: "Material choices, print settings, and batch planning.",
+    title: "3D printing",
+    description: "Material choices, settings, and batch planning.",
   },
   {
-    title: "Painting & Finishing",
-    description: "Surface prep, color, texture, and final finish.",
+    title: "Paint & finish",
+    description: "Surface prep, color, texture, final finish.",
   },
   {
     title: "Assembly",
@@ -34,69 +34,103 @@ const capabilities = [
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Nathan Rasmussen Design</p>
-        <h1>Custom-designed awards, props, and display pieces.</h1>
+        <p class="eyebrow">Custom work · Seattle, WA</p>
+        <h1>Awards, props &amp; display pieces, built end to end.</h1>
         <p class="lead">
-          I make finished physical pieces for businesses, events, and special projects using
-          CAD, 3D printing, paint, and hands-on finishing.
+          Finished physical pieces for businesses, events, and special projects — CAD through
+          paint, print, and final assembly.
         </p>
         <div class="button-row" aria-label="Primary actions">
           <a class="button" href="/portfolio/">View Portfolio</a>
           <a class="button secondary" href="/contact/">Request a Quote</a>
         </div>
+        <div class="meta-row">
+          <span>Modeling</span><span class="sep">/</span>
+          <span>3D printing</span><span class="sep">/</span>
+          <span>Paint &amp; finish</span><span class="sep">/</span>
+          <span>Assembly</span>
+        </div>
       </div>
-      <figure class="hero-media">
-        <img
-          src="/images/nathan-space-needle.jpg"
-          alt="Nathan with a 5.5-foot 3D printed Space Needle."
-          width="1200"
-          height="800"
-        />
+      <figure class="figure-frame hero-media">
+        <div class="figure-clip">
+          <img
+            src="/images/nathan-space-needle.jpg"
+            alt="Nathan with a 5.5-foot 3D printed Space Needle."
+            width="1200"
+            height="1500"
+          />
+        </div>
+        <figcaption>
+          <span><span class="fig-label">FIG. 01</span> — 5½-ft Space Needle</span>
+          <span>≈750 hrs of printing</span>
+        </figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="section-tight">
+  <section class="spec-strip" aria-label="Featured build statistics">
+    <div class="spec-cell">
+      <p class="spec-label">Featured build</p>
+      <p class="spec-title">5½-ft Space Needle</p>
+    </div>
+    <div class="spec-cell">
+      <p class="spec-label">Design + modeling</p>
+      <p class="spec-value">≈100 <small>hrs</small></p>
+    </div>
+    <div class="spec-cell">
+      <p class="spec-label">Print time</p>
+      <p class="spec-value">≈750 <small>hrs</small></p>
+    </div>
+    <div class="spec-cell">
+      <p class="spec-label">Finishing</p>
+      <p class="spec-value">≈100 <small>hrs</small></p>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container section-heading">
-      <div>
-        <p class="eyebrow">Selected projects</p>
-        <h2>Recent work.</h2>
+      <div class="stack" style="gap: 12px;">
+        <p class="eyebrow eyebrow-plain">[ Selected work ]</p>
+        <h2>Recent projects.</h2>
       </div>
-      <p>
-        A few examples of awards, props, and display pieces made for specific uses,
-        settings, and presentation needs.
-      </p>
+      <a class="link-button" href="/portfolio/">All projects →</a>
     </div>
     <div class="container project-grid">
       {featuredProjects.map((project) => <ProjectCard project={project} />)}
     </div>
   </section>
 
-  <section class="section">
-    <div class="container process-layout">
-      <div class="stack">
-        <p class="eyebrow">Process</p>
-        <h2>More than sending a file to a printer.</h2>
-      </div>
+  <section class="process-band">
+    <div class="container">
+      <p class="eyebrow eyebrow-plain">[ The process ]</p>
+      <h2>More than sending a file to a printer.</h2>
       <div class="capability-grid">
         {
           capabilities.map((capability, index) => (
-            <>
-              <article class="capability-card">
-                <h3>{capability.title}</h3>
-                <p>{capability.description}</p>
-              </article>
-              {index < capabilities.length - 1 && <span class="process-arrow" aria-hidden="true">↓</span>}
-            </>
+            <article class="capability-card">
+              <p class="capability-index">0{index + 1}</p>
+              <h3>{capability.title}</h3>
+              <p>{capability.description}</p>
+            </article>
           ))
         }
       </div>
     </div>
   </section>
 
-  <section class="section about-band">
-    <div class="container about-grid">
-      <figure class="about-media">
+  <section class="about-band">
+    <div class="container about-band-grid">
+      <div class="stack" style="gap: 18px;">
+        <p class="eyebrow eyebrow-plain">[ About ]</p>
+        <h2>Every piece leaves the workshop finished.</h2>
+        <p class="lead">
+          I work across the digital and physical parts of a project: modeling, print planning,
+          test pieces, cleanup, paint, and assembly. The goal is always a piece that looks
+          considered when it leaves the workshop.
+        </p>
+        <a class="link-button" href="/about/">More about the studio →</a>
+      </div>
+      <figure>
         <img
           src="/images/portfolio/nathan-printer.jpg"
           alt="Nathan working near a 3D printer."
@@ -105,16 +139,6 @@ const capabilities = [
           loading="lazy"
         />
       </figure>
-      <div class="stack">
-        <p class="eyebrow">Hi, I'm Nathan</p>
-        <h2>Designer, printer, and hands-on finisher.</h2>
-        <p>
-          I work across the digital and physical parts of a project: modeling, print planning,
-          test pieces, cleanup, paint, and assembly. Some jobs need original CAD work, some need
-          careful modification, and some are mostly about execution and finish. The goal is always
-          a piece that looks considered when it leaves the workshop.
-        </p>
-      </div>
     </div>
   </section>
 </BaseLayout>

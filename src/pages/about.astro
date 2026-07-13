@@ -6,47 +6,68 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="About"
   description="About Nathan Rasmussen, his background, and the workshop practice behind Nathan Rasmussen Design."
 >
-  <section class="section">
-    <div class="container about-grid">
-      <figure class="about-media">
+  <section class="container about-grid">
+    <figure class="figure-frame about-media">
+      <div class="figure-clip">
         <img
           src="/images/portfolio/nathan-deer.jpg"
           alt="Nathan with a custom deer display piece."
           width="1200"
           height="800"
         />
-      </figure>
-      <div class="stack">
-        <p class="eyebrow">About</p>
-        <h1>I'm Nathan.</h1>
-        <p>
-          I have always been drawn to projects where digital work eventually has to become
-          something physical. 3D printing pulled me in because it sits right in that middle
-          ground: part design problem, part machine tuning, part handwork at the bench.
-        </p>
+      </div>
+      <figcaption>
+        <span><span class="fig-label">FIG. 01</span> — Custom deer display piece</span>
+        <span>Workshop, Seattle</span>
+      </figcaption>
+    </figure>
+    <div class="stack">
+      <p class="eyebrow">About</p>
+      <h1>I'm Nathan.</h1>
+      <p>
+        I have always been drawn to projects where digital work eventually has to become
+        something physical. 3D printing pulled me in because it sits right in that middle
+        ground: part design problem, part machine tuning, part handwork at the bench.
+      </p>
 
-        <p>
-          My background is in physics and software development, so I tend to approach builds
-          in a pretty methodical way. I like figuring out how something should break into parts,
-          where tolerances matter, what can be printed cleanly, and what will need sanding, paint,
-          hardware, or a different approach entirely.
-        </p>
+      <p>
+        My background is in physics and software development, so I tend to approach builds
+        in a pretty methodical way. I like figuring out how something should break into parts,
+        where tolerances matter, what can be printed cleanly, and what will need sanding, paint,
+        hardware, or a different approach entirely.
+      </p>
 
-        <p>
-          The work I enjoy most is the kind that asks for both planning and patience: awards that
-          need to feel good in someone's hands, display pieces that need to hold up visually, or
-          practical parts that have to fit a real space. I do not think of the printer as the whole
-          process. It is one tool in a longer chain of decisions.
-        </p>
+      <p>
+        The work I enjoy most is the kind that asks for both planning and patience: awards that
+        need to feel good in someone's hands, display pieces that need to hold up visually, or
+        practical parts that have to fit a real space. I do not think of the printer as the whole
+        process. It is one tool in a longer chain of decisions.
+      </p>
 
+      <div class="callout">
+        <p class="panel-label">[ Favorite build ]</p>
         <p>
           My favorite project so far has been a 5½-foot-tall Space Needle. I live in Seattle,
           and it was one of those projects I kept coming back to until I finally committed to it.
           It took roughly 100 hours of design and modeling, 750 hours of printing, and another
-          100 hours of assembly, sanding, and painting. It was slow, repetitive, and very satisfying
-          when the separate printed sections finally started reading as one object.
+          100 hours of assembly, sanding, and painting. It was slow, repetitive, and very
+          satisfying when the separate printed sections finally started reading as one object.
         </p>
+        <a
+          class="link-button"
+          href="/portfolio/large-space-needle-print/"
+          style="margin-top: 16px;"
+        >
+          See the build →
+        </a>
       </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-band-inner">
+      <h2>Have a project that needs planning and patience?</h2>
+      <a class="button" href="/contact/">Request a quote →</a>
     </div>
   </section>
 </BaseLayout>

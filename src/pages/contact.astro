@@ -18,28 +18,30 @@ const mailto = `mailto:${site.email}?subject=${subject}`;
   title="Contact"
   description="Contact Nathan Rasmussen Design for awards, props, display pieces, and fabrication inquiries."
 >
-  <section class="section">
-    <div class="container split">
-      <div class="stack">
-        <p class="eyebrow">Contact</p>
-        <h1>Request a quote.</h1>
-        <p class="lead">
-          Send the practical details first. Scope, quantity, deadline, budget, and reference
-          images make it easier to tell what the project will require.
-        </p>
-        <div class="button-row">
-          <a class="button" href={mailto}>Email Nathan Rasmussen Design</a>
-        </div>
+  <section class="container contact-grid">
+    <div class="stack">
+      <p class="eyebrow">Contact</p>
+      <h1>Request a quote.</h1>
+      <p class="lead">
+        Send the practical details first. Scope, quantity, deadline, budget, and reference
+        images make it easier to tell what the project will require.
+      </p>
+      <div class="button-row">
+        <a class="button" href={mailto}>Email Nathan Rasmussen Design →</a>
       </div>
-      <aside class="panel stack">
-        <h2>Include these details</h2>
-        <ul class="contact-list">
-          {contactItems.map((item) => <li>{item}</li>)}
-        </ul>
-        <p>
-          Email: <a href={mailto}>{site.email}</a>
-        </p>
-      </aside>
+      <p style="font-family: var(--font-mono); font-size: 12.5px; color: var(--muted);">
+        or write directly: <a href={mailto}>{site.email}</a>
+      </p>
     </div>
+    <aside class="contact-panel">
+      <p class="panel-label">[ Include these details ]</p>
+      <ul class="contact-list">
+        {contactItems.map((item) => <li>{item}</li>)}
+      </ul>
+      <p>
+        A sketch, logo, photo, or reference image helps guide the project — even if it
+        still needs design work before production.
+      </p>
+    </aside>
   </section>
 </BaseLayout>

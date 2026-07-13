@@ -1,5 +1,5 @@
 ---
-import { getProjectBySlug, projects } from "../../data/projects";
+import { getProjectBySlug, projectCategories, projects } from "../../data/projects";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export function getStaticPaths() {
@@ -15,79 +15,88 @@ if (!project) {
 }
 
 const heroImage = project.heroImage ?? project.coverImage;
-const gallery = project.gallery?.length
-  ? project.gallery
-  : [{ src: heroImage, caption: project.title }];
+const category = projectCategories.find((c) => c.id === project.category);
+const gallery = (project.gallery ?? []).filter((image) => image.src !== heroImage);
 ---
 
 <BaseLayout title={project.title} description={project.summary}>
   <article>
-    <section class="section">
-      <div class="container project-detail-hero">
-        <div class="stack">
-          <p class="eyebrow">Portfolio</p>
-          <h1>{project.title}</h1>
-          <p class="lead">{project.description}</p>
+    <section class="container project-detail-hero">
+      <div class="stack">
+        <a class="back-link" href="/portfolio/">← Portfolio / {category?.title ?? "All work"}</a>
+        <h1>{project.title}.</h1>
+        <p class="lead">{project.description}</p>
+      </div>
+      <figure class="figure-frame">
+        <div class="figure-clip">
+          <img src={heroImage} alt={project.alt} width="1200" height="900" />
         </div>
-        <figure class="project-detail-media">
-          <img src={heroImage} alt={project.alt} width="1200" height="1200" />
+        <figcaption>
+          <span><span class="fig-label">FIG. 01</span> — {project.title}</span>
           {
-            project.heroCredit && (
-              <figcaption>
-                Photo by{" "}
+            project.heroCredit ? (
+              <span>
+                Photo:{" "}
                 <a href={project.heroCredit.url} target="_blank" rel="noreferrer">
                   {project.heroCredit.name}
                 </a>
-              </figcaption>
+              </span>
+            ) : (
+              <span>{category?.title}</span>
             )
           }
-        </figure>
-      </div>
+        </figcaption>
+      </figure>
     </section>
 
-    <section class="section-tight">
-      <div class="container project-detail-grid">
-        <section class="panel stack">
-          <h2>Design challenges</h2>
-          <ul class="list">
+    <section class="detail-panels">
+      <div class="detail-panels-inner">
+        <div class="detail-panel">
+          <p class="panel-label">[ Design challenges ]</p>
+          <ul class="dash-list">
             {project.challenges.map((challenge) => <li>{challenge}</li>)}
           </ul>
-        </section>
-
+        </div>
         {
           project.fabrication && (
-            <section class="panel stack">
-              <h2>Materials / fabrication notes</h2>
+            <div class="detail-panel">
+              <p class="panel-label">[ Fabrication notes ]</p>
               <p>{project.fabrication}</p>
-            </section>
+            </div>
           )
         }
-
-        <section class="panel stack">
-          <h2>Final outcome</h2>
+        <div class="detail-panel">
+          <p class="panel-label">[ Final outcome ]</p>
           <p>{project.outcome}</p>
-        </section>
+        </div>
       </div>
     </section>
 
-    <section class="section-tight">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Gallery</p>
-            <h2>Project images</h2>
-          </div>
-        </div>
-        <div class="project-detail-gallery">
-          {
-            gallery.map((image) => (
+    {
+      gallery.length > 0 && (
+        <section class="container gallery-section">
+          <p class="eyebrow eyebrow-plain">[ Gallery ]</p>
+          <h2>Project images.</h2>
+          <div class="gallery-grid">
+            {gallery.map((image, index) => (
               <figure>
-                <img src={image.src} alt={project.alt} loading="lazy" />
-                <figcaption>{image.caption}</figcaption>
+                <div class="figure-clip">
+                  <img src={image.src} alt={project.alt} loading="lazy" />
+                </div>
+                <figcaption>
+                  <span class="fig-label">FIG. 0{index + 2}</span> — {image.caption}
+                </figcaption>
               </figure>
-            ))
-          }
-        </div>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <section class="cta-band">
+      <div class="container cta-band-inner">
+        <h2>Want something built at this level of finish?</h2>
+        <a class="button" href="/contact/">Request a quote →</a>
       </div>
     </section>
   </article>

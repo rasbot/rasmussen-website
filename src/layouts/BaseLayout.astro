@@ -21,6 +21,12 @@ const normalizedPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <title>{pageTitle}</title>
   </head>
   <body>
@@ -28,27 +34,35 @@ const normalizedPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
       <header class="site-header">
         <div class="container header-inner">
           <a class="brand" href="/" aria-label={`${site.name} home`}>
-            <strong>{site.name}</strong>
-            <span>{site.tagline}</span>
+            <span class="brand-mark" aria-hidden="true">NR</span>
+            <span class="brand-text">
+              <strong>Nathan Rasmussen</strong>
+              <span>Design + Fabrication Studio</span>
+            </span>
           </a>
           <nav aria-label="Primary navigation">
             <ul class="nav-list">
               {
-                navLinks.map((link) => {
-                  const linkPath = link.href.endsWith("/") ? link.href : `${link.href}/`;
-                  const current =
-                    link.href === "/"
-                      ? normalizedPath === "/"
-                      : normalizedPath.startsWith(linkPath);
-                  return (
-                    <li>
-                      <a href={link.href} aria-current={current ? "page" : undefined}>
-                        {link.label}
-                      </a>
-                    </li>
-                  );
-                })
+                navLinks
+                  .filter((link) => link.href !== "/contact/")
+                  .map((link) => {
+                    const linkPath = link.href.endsWith("/") ? link.href : `${link.href}/`;
+                    const current =
+                      link.href === "/"
+                        ? normalizedPath === "/"
+                        : normalizedPath.startsWith(linkPath);
+                    return (
+                      <li>
+                        <a href={link.href} aria-current={current ? "page" : undefined}>
+                          {link.label}
+                        </a>
+                      </li>
+                    );
+                  })
               }
+              <li>
+                <a class="nav-cta" href="/contact/">Request a quote →</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -58,9 +72,10 @@ const normalizedPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
       </main>
       <footer class="site-footer">
         <div class="container footer-inner">
-          <p>&copy; {new Date().getFullYear()} {site.name}</p>
+          <p>{site.name} — Seattle, WA</p>
           <p>
             <a href={`mailto:${site.email}`}>{site.email}</a>
+            &nbsp;&nbsp;© {new Date().getFullYear()}
           </p>
         </div>
       </footer>
